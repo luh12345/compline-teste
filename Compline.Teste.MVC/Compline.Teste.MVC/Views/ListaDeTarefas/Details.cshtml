@@ -1,0 +1,52 @@
+﻿@model Compline.Teste.Commons.Entidades.ListaDeTarefas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("Nome da Lista")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeLista)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Cadastrado em ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Atualizado em ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+    </dl>
+    @if (Model.Tarefas.Any())
+    {
+    <h3>Essa lista de tarefas possui @Model.Tarefas.Count tarefas cadastradas</h3>
+        <h3>Clique @Html.ActionLink("Aqui", "Index", "Tarefas", new { idLista = Model.Id },null) para visualizar as tarefas dessa lista</h3>
+    }
+    else
+    {
+        <h3>Essa lista não possui tarefas cadastradas</h3>
+    }
+  
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar para listas de tarefas", "Index") |
+    @Html.ActionLink("Cadastrar novas tarefas", "Form","Tarefas", new { idLista = Model.Id }, null)
+</p>

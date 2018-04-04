@@ -1,0 +1,42 @@
+﻿@model Compline.Teste.Commons.Entidades.ListaDeTarefas
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Remover</h2>
+
+<h3>Tem certeza que deseja remover essa Lista ?</h3>
+@if (Model.Tarefas.Any())
+{
+    <h3>As @Model.Tarefas.Count tarefas cadastradas nessa lista também serão excluidas!!!</h3>
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nome da Lista")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeLista)
+        </dd>
+    </dl>
+    <br />
+
+    @using (Html.BeginForm("ConfirmDelete", "ListaDeTarefas", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+
+        if (Model.Tarefas.Any())
+        {
+            @Html.HiddenFor(model => model.Tarefas)
+        }
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para lista", "Index")
+        </div>
+    }
+</div>

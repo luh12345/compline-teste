@@ -1,0 +1,53 @@
+﻿@model Compline.Teste.Commons.Entidades.ListaDeTarefas
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tarefas da lista de tarefas @Html.ActionLink(Model.NomeLista,"Details","ListaDeTarefas", new { id = Model.Id  },null)</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar nova tarefa", "Form","Tarefas", new { idLista = Model.Id},null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Descrição")
+        </th>
+        <th>
+            @Html.DisplayName("Prioridade")
+        </th>
+        <th>
+            @Html.DisplayName("Cadastrado em")
+        </th>
+        <th>
+            @Html.DisplayName("Atualizado em")
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var tarefa in Model.Tarefas) {
+    <tr>
+        <td>
+            @Html.DisplayName(tarefa.Descricao)
+        </td>
+        <td>
+            @Html.DisplayName(tarefa.Prioridade.Descricao)
+        </td>
+        <td>
+            @Html.DisplayName(tarefa.CreatedAt.ToShortDateString())
+        </td>
+        <td>
+            @Html.DisplayName(tarefa.UpdatedAt.ToShortDateString())
+        </td>
+
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = tarefa.Id }) |
+            @Html.ActionLink("Visualizar", "Details", new { id = tarefa.Id }) |
+            @Html.ActionLink("Remover", "Delete", new { id = tarefa.Id })
+        </td>
+    </tr>
+}
+
+</table>

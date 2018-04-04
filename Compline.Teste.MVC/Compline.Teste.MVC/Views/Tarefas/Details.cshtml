@@ -1,0 +1,41 @@
+﻿@model Compline.Teste.Commons.Entidades.Tarefa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhamento da Tarefa @Model.Descricao</h2>
+
+<div>
+    <h4>Tarefa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Prioridade")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prioridade.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Nome da lista")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListaDeTarefas.NomeLista)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar para listagem de tarefas", "Index", new { idLista = Model.ListaDeTarefasId})
+</p>
