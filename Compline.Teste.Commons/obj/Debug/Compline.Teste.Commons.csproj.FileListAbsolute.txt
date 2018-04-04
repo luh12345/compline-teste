@@ -1,0 +1,5 @@
+C:\Users\zidan\Documents\Visual Studio 2017\Projects\Compline.Teste.Commons\obj\Debug\Compline.Teste.Commons.csproj.CoreCompileInputs.cache
+C:\Users\zidan\Documents\Visual Studio 2017\Projects\Compline.Teste.Commons\bin\Debug\Compline.Teste.Commons.dll
+C:\Users\zidan\Documents\Visual Studio 2017\Projects\Compline.Teste.Commons\bin\Debug\Compline.Teste.Commons.pdb
+C:\Users\zidan\Documents\Visual Studio 2017\Projects\Compline.Teste.Commons\obj\Debug\Compline.Teste.Commons.dll
+C:\Users\zidan\Documents\Visual Studio 2017\Projects\Compline.Teste.Commons\obj\Debug\Compline.Teste.Commons.pdb
